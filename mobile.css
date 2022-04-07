@@ -1,0 +1,13 @@
+@media (max-width: 540px) {
+    .card{
+        margin-top: 20%;
+    }
+    .jogo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}

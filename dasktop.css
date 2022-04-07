@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e8f8bb;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+}
+
+.titulo {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.titulo h1 {
+    color: #75B79E;
+    font-size: 56px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.jogo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card{
+    background-color:#A7E9AF;
+    border-radius: 5px;
+    border: 1px solid #99CEA8;
+    width:117px;
+    height: 146px;
+    box-shadow: 0.5px 0.5px 0.5px 2.4px rgba(172, 175, 171, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4%;
+    margin-top: 4%;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
