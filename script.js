@@ -1,6 +1,8 @@
 
 const lista_imagens=['Arquivos Úteis - Projeto 04 - Parrot Card Game/bobrossparrot.gif','Arquivos Úteis - Projeto 04 - Parrot Card Game/explodyparrot.gif', 'Arquivos Úteis - Projeto 04 - Parrot Card Game/fiestaparrot.gif', 'Arquivos Úteis - Projeto 04 - Parrot Card Game/metalparrot.gif', 'Arquivos Úteis - Projeto 04 - Parrot Card Game/revertitparrot.gif', 'Arquivos Úteis - Projeto 04 - Parrot Card Game/tripletsparrot.gif', 'Arquivos Úteis - Projeto 04 - Parrot Card Game/unicornparrot.gif']
 
+let lista_verificar =[];
+
 function comparador() { 
 	return Math.random() - 0.5; 
 }
@@ -53,13 +55,27 @@ function start (){
 }
 start()
 
+function verificar () {
+    if(lista_verificar[0].getAttribute("src")===lista_verificar[1].getAttribute("src")){
+        lista_verificar=[];
+    }else{
+        lista_verificar[0].classList.add("visib");
+        lista_verificar[1].classList.add("visib");
+        lista_verificar=[];
+    }
+}
+
 function virar(elemento) {
     elemento.classList.remove("anima");
     elemento.setAttribute("disabled","disabled");
     let front = elemento.querySelector(".front-face");
     front.classList.remove("visib");
     let back = elemento.querySelector(".back-face");
+    lista_verificar.push(back)
     back.classList.remove("visib");
+    if(lista_verificar.length===2){
+        setTimeout(verificar, 1000);
+    }
 }
 
 
