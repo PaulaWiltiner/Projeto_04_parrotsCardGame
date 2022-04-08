@@ -1,4 +1,9 @@
 
+function comparador() { 
+	return Math.random() - 0.5; 
+}
+
+
 function inserirCartas(qtd){
     let contador =qtd
     let jogo = document.querySelector(".jogo")
@@ -29,5 +34,15 @@ function start (){
         start()
     }
 }
-start()
+//start()
+
+function virar(elemento) {
+    elemento.classList.remove("anima");
+    elemento.setAttribute("disabled","disabled");
+    let front = elemento.querySelector(".front-face");
+    front.classList.remove("visib");
+    let back = elemento.querySelector(".back-face");
+    back.classList.remove("visib");
+}
+
 
