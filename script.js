@@ -69,7 +69,7 @@ function verificar () {
             lista_tagelem[i].setAttribute("onclick","virar(this)")
           }
         if(lista_tagelem.length===2){
-            alert(`Parabéns ! Você ganhou em ${jogadas} jogadas e em ${tempo}`)
+            alert(`Parabéns ! Você ganhou em ${jogadas} jogadas e em ${tempo} segundos!`)
             clearInterval(meuInterval);
         }
         lista_verificar[0][1].removeAttribute("onclick")
@@ -91,7 +91,6 @@ function verificar () {
 
 function virar(elemento) {
     jogadas=jogadas+1;
-    console.log(jogadas)
     let lista_elem = [];
     elemento.classList.remove("flip");
     let back = elemento.querySelector(".back");
