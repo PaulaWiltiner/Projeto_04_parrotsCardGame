@@ -3,7 +3,16 @@ const lista_imagens=['Arquivos Úteis - Projeto 04 - Parrot Card Game/bobrosspar
 
 let lista_verificar =[];
 let lista_tagelem=[];
-let jogadas=0
+let jogadas=0;
+let tempo=0;
+let meuInterval;
+
+function cronometro() {
+    tempo=tempo+1
+    let contagem = document.querySelector(".cronometro").querySelector("h3")
+    contagem.innerHTML = tempo + " S"
+}
+
 function comparador() { 
 	return Math.random() - 0.5; 
 }
@@ -28,6 +37,7 @@ function inserirCartas(qtd){
             contador= contador+1;
 
         }
+        meuInterval = setInterval(cronometro, 1000);
          }
     }
 
@@ -59,7 +69,8 @@ function verificar () {
             lista_tagelem[i].setAttribute("onclick","virar(this)")
           }
         if(lista_tagelem.length===2){
-            alert(`Parabéns ! Você ganhou em ${jogadas} jogadas!`)
+            alert(`Parabéns ! Você ganhou em ${jogadas} jogadas e em ${tempo}`)
+            clearInterval(meuInterval);
         }
         lista_verificar[0][1].removeAttribute("onclick")
         lista_verificar[1][1].removeAttribute("onclick")

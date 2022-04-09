@@ -77,3 +77,33 @@ body{
     width: 100%;
     object-fit: contain;
 }
+
+.cronometro{
+    background-color: #72b97a;
+    color: #ffffff;
+    position: absolute;
+    top:0px;
+    right: 0px;
+    width:20%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: 1px solid #99CEA8;
+}
+
+.cronometro h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cronometro h3{
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:3px ;
+}
