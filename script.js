@@ -32,6 +32,7 @@ function inserirCartas(qtd){
         lista_final.sort(comparador);
         let contador =0;
         let jogo = document.querySelector(".jogo");
+        jogo.innerHTML="";
         while (contador < qtd){
             jogo.innerHTML = jogo.innerHTML + "<div class='card flip' onclick='virar(this)' ><img class='front face' src='Arquivos Úteis - Projeto 04 - Parrot Card Game/front.png' > <img class='back face' src='"+lista_final[contador]+"'></div>";
             contador= contador+1;
@@ -63,6 +64,20 @@ function start (){
 }
 start()
 
+function reinicia (){
+    let resposta = prompt("Deseja jogar novamente ? Responda com sim ou não");
+    if(resposta==="sim" || resposta==="não" ){
+        if(resposta==="sim"){
+            jogadas=0;
+            tempo=0;
+            start()
+        }
+    }else{
+        alert("Por favor, digite somente sim ou não")
+        reinicia()
+    }
+}
+
 function verificar () {
     if(lista_verificar[0][0].getAttribute("src")===lista_verificar[1][0].getAttribute("src")){
         for (i=0; i<lista_tagelem.length; i++){
@@ -71,6 +86,7 @@ function verificar () {
         if(lista_tagelem.length===2){
             alert(`Parabéns ! Você ganhou em ${jogadas} jogadas e em ${tempo} segundos!`)
             clearInterval(meuInterval);
+            reinicia()
         }
         lista_verificar[0][1].removeAttribute("onclick")
         lista_verificar[1][1].removeAttribute("onclick")
